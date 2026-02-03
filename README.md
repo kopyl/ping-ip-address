@@ -17,6 +17,7 @@ docker build -t ping-ip-address .
 docker build --platform linux/amd64/v2 -t ping-ip-address .
 
 ### Docker run;
+```sh
 docker run --rm \
     -e PING_IP_ADDRESS="0.0.0.0" \
     -e PING_PORT="80" \
@@ -25,6 +26,7 @@ docker run --rm \
     -e SUPABASE_SERVICE_KEY="sb_secret_..." \
     -e SUPABASE_PROJECT_ID="..." \
     ping-ip-address
+```
 
 
 ### Push to Docker Hub:
