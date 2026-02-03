@@ -48,7 +48,7 @@ docker push kopyl/ping-ip-address:latest
 #### Database tables required:
 - ping_statuses
 
-#### Columns required:
+#### Database table columns required:
 - id
   - Type: uuid
   - Default value: gen_random_uuid()
