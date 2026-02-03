@@ -45,10 +45,12 @@ docker push kopyl/ping-ip-address:latest
 - [Disable IP accessing via client libraries](PostgreSQL/functions/check_ip)
 - Docker installed
 
-#### Database tables required:
+### Database:
+
+##### Tables required:
 - ping_statuses
 
-#### Database table columns required:
+##### Table columns required:
 - id
   - Type: uuid
   - Default value: gen_random_uuid()
@@ -63,7 +65,7 @@ docker push kopyl/ping-ip-address:latest
 - port
   - Type: int2
 
-#### Database table column properties:
+##### Table column properties:
 - Applied to all:
     - Not nullable
     - Not unique
