@@ -11,10 +11,14 @@ A Dockerized application that
 - Oracle (for VPS hosting)
 
 #### Build for development:
+```sh
 docker build -t ping-ip-address .
+```
 
 ### Build for AMD64 architecture on Apple Silicon:
+```sh
 docker build --platform linux/amd64/v2 -t ping-ip-address .
+```
 
 ### Docker run;
 ```sh
