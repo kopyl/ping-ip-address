@@ -1,0 +1,1 @@
+We need to create a function that restricts access to Supabase PostgreSQL via client libraries.
