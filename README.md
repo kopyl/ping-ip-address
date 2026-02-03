@@ -8,6 +8,7 @@ A Dockerized application that
 - Python
 - Docker
 - Supabase (PostgreSQL)
+- Oracle (for VPS hosting)
 
 #### Build for development:
 docker build -t ping-ip-address .
