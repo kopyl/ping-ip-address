@@ -38,3 +38,35 @@ docker run --rm \
 docker tag ping-ip-address kopyl/ping-ip-address:latest
 docker push kopyl/ping-ip-address:latest
 ```
+
+### Requirements:
+- Data API on Supabase must be enabled in project settings
+- RLS must be enabled in project settings
+- [Disable IP accessing via client libraries](PostgreSQL/functions/check_ip)
+- Docker installed
+
+#### Database tables required:
+- ping_statuses
+
+#### Columns required:
+- id
+  - Type: uuid
+  - Default value: gen_random_uuid()
+  - Generated on insert: yes
+- created_at
+  - Type: timestampz (timestamp with a time zone)
+  - Default value: now()
+- status
+  - Type: bool
+- ip_address
+  - Type: text
+- port
+  - Type: int2
+
+#### Column properties:
+- Applied to all:
+    - Not nullable
+    - Not unique
+        - Exception:
+            - id
+    - Not defined as Array
