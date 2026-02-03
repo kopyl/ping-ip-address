@@ -50,5 +50,5 @@ def get_last_status(ip_address: str, port: int) -> dict:
         }
     return {
         "status": data[0]["status"],
-        "timestamp": data[0]["created_at"]
+        "timestamp": datetime.datetime.fromisoformat(data[0]["created_at"])
     }

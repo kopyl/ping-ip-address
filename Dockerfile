@@ -1,4 +1,4 @@
-FROM python:3.10-slim
+FROM python:3.12-slim
 
 RUN pip install supabase==2.27.3
 RUN pip install python-telegram-bot==22.6
