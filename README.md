@@ -63,7 +63,7 @@ docker push kopyl/ping-ip-address:latest
 - port
   - Type: int2
 
-#### Column properties:
+#### Database table column properties:
 - Applied to all:
     - Not nullable
     - Not unique
