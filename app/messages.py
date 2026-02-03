@@ -46,5 +46,5 @@ def make_status_message(
             time_with_light = timestamp - last_status["timestamp"]
             message += f" Світло було присутнє протягом {format_time_delta(time_with_light)}"
         return message
-    else:
-        return ""
+    
+    return ""
