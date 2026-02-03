@@ -2,6 +2,7 @@ from supabase import create_client, Client
 from tenacity import retry, stop_after_attempt, wait_exponential
 from postgrest import APIResponse
 import os
+import datetime
 
 
 SUPABASE_PROJECT_ID = os.getenv("SUPABASE_PROJECT_ID")
@@ -24,7 +25,13 @@ def send_get_last_status_request(ip_address: str, port: int) -> APIResponse:
 
 
 @retry(stop=stop_after_attempt(5), wait=wait_exponential(multiplier=1, min=1, max=10))
-def write_status(is_success: bool, ip_address: str, port: int, timestamp) -> None:
+def write_status(
+    is_success: bool,
+    ip_address: str,
+    port: int,
+    timestamp: datetime.datetime
+) -> None:
+    
     supabase.table("ping_statuses").insert({
         "ip_address": ip_address,
         "port": port,

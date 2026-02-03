@@ -15,15 +15,15 @@ async def main():
     last_status = db.get_last_status(IP_ADDRESS, PORT)
     is_reachable = ping(IP_ADDRESS, PORT)
     status_change_counter = 0
-
+    
     while True:
         if is_reachable != last_status["status"]:
             status_change_counter += 1
             timestamp = datetime.now(timezone.utc)
 
             message = make_status_message(is_reachable, last_status, timestamp, status_change_counter)
-
             await telegram.send_telegram_message(message)
+
             db.write_status(is_reachable, IP_ADDRESS, PORT, timestamp)
 
             last_status = {
