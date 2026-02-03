@@ -1,3 +1,14 @@
+# Description
+
+A Dockerized application that
+- Pings a specified IP address and port for availability.
+- Sends notifications via Telegram if the IP address is unreachable.
+
+### Tech Stack:
+- Python
+- Docker
+- Supabase (PostgreSQL)
+
 #### Build for development:
 docker build -t ping-ip-address .
 
