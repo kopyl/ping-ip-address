@@ -34,5 +34,7 @@ docker run --rm \
 
 
 ### Push to Docker Hub:
+```sh
 docker tag ping-ip-address kopyl/ping-ip-address:latest
 docker push kopyl/ping-ip-address:latest
+```
