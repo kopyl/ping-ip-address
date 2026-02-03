@@ -15,7 +15,7 @@ async def main():
     last_status = db.get_last_status(IP_ADDRESS, PORT)
     is_reachable = ping(IP_ADDRESS, PORT)
     status_change_counter = 0
-    
+
     while True:
         if is_reachable != last_status["status"]:
             status_change_counter += 1
@@ -30,6 +30,7 @@ async def main():
                 "status": is_reachable,
                 "timestamp": timestamp
             }
+            
         await asyncio.sleep(1)
 
         is_reachable = ping(IP_ADDRESS, PORT)
